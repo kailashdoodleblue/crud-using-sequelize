@@ -31,7 +31,7 @@ exports.login = async (req,res)=>{
         if (!checkpass) {
             return res.status(401).json({ error: 'Invalid password' });
         }
-        token=jwt.sign({ userName }, 'hello',{ expiresIn: '1h' }) 
+        token=jwt.sign({ userName }, 'hello',{ expiresIn: '900s' }) 
         return res.json({token,message:`${userName} login successful`})      
     })   
 
